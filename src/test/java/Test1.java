@@ -42,14 +42,14 @@ String baseUrl;
       action.moveToElement(ele).perform();
 
 
-        WebElement elee = driver.findElement(By.xpath("//*[contains(@class,'sbrf-div-list-inner --area bp-area overlays-container')]//*[contains(text(), 'Страхование путешественников')]"));
-        Actions action2 = new Actions(driver);
+  //      WebElement elee = driver.findElement(By.xpath("//*[contains(@class,'sbrf-div-list-inner --area bp-area overlays-container')]//*[contains(text(), 'Страхование путешественников')]"));
+   //     Actions action2 = new Actions(driver);
 
-      action2.moveToElement(elee).click();
+   //   action2.moveToElement(elee).click();
 
 
 //   driver.findElement(By.xpath("//*[contains(@class,'sbrf-div-list-inner --area bp-area header_more_nav')]//*[contains(text(), 'Застраховать себя')]"));
-   driver.findElement(By.xpath("//*[contains(@class,'sbrf-div-list-inner --area bp-area overlays-container')]//*[contains(text(), 'Страхование путешественников')]")).click();
+   driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/table/tbody/tr/td/div/div/div/div/div/div[1]/div[1]/div[4]/div/div/div/ul/li[5]/div/div/div[2]/div/a")).click();
        // Wait<WebDriver> wait = new WebDriverWait(driver, 5,1000);
        // wait.until(ExpectedCondition.)
 
