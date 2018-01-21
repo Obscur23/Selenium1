@@ -51,11 +51,13 @@ String baseUrl;
 
         driver.findElement(By.xpath("//span[@class='multiline']//*[contains(text(),'Застраховать себя')]")).click();
         driver.findElement(By.xpath("//div[contains(@class,'sbrf-div-list-inner --area bp-area header_more_nav')]//a[contains(text(),'Страхование путешественников')]")).click();
-    Wait<WebDriver> wait = new WebDriverWait(driver, 5,1000);
+    Wait<WebDriver> wait = new WebDriverWait(driver, 5,500);
         WebElement onlineBtn = driver.findElement(By.xpath("//div[contains(@data-pid,'SBRF-TEXT-1021974')]"));
       wait.until(ExpectedConditions.elementToBeClickable(onlineBtn)).click();
-
-
+      WebElement box = driver.findElement(By.xpath("//div[contains(@class,'b-form-box-block')]//div[(text()='Минимальная')]"));
+       //wait.until(ExpectedConditions.elementToBeClickable(header)).click();
+     // wait.until(ExpectedConditions.visibilityOf(box));
+       //driver.findElement(By.xpath("//*[contains(text(),'Минимальная')]")).click();
 
 
     }
