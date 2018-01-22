@@ -66,6 +66,20 @@ String baseUrl;
       wait.until(ExpectedConditions.visibilityOf(box)).click();
      //  driver.findElement(By.xpath("//*[contains(text(),'Минимальная')]")).click();
      driver.findElement(By.xpath("//*[contains(@ng-click,'save()')]")).click();
+         fillField(By.name("insured0_surname"),"Ivanov");
+        fillField(By.name("insured0_name"),"Petr");
+        fillField(By.name("insured0_birthDate"),"27.02.1983");
+        fillField(By.name("surname"),"Иванов");
+        fillField(By.name("name"),"Петр");
+        fillField(By.name("middlename"),"Петрович");
+
+       fillField(By.name("passport_series"),"1234");
+       fillField(By.name("passport_number"),"123458");
+       fillField(By.name("issueDate"),"27.02.2013");
+        fillField(By.name("birthDate"),"27.07.1983");
+        fillField(By.name("issuePlace"),"ОВД 78");
+        driver.findElement(By.xpath("//*[contains(text(),'Продолжить')]")).click();
+
 
 
 
