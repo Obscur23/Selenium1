@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 public class Test1 {
 WebDriver driver;
 String baseUrl;
+
 
     @Before
     public void beforeTest(){
@@ -54,17 +56,29 @@ String baseUrl;
     Wait<WebDriver> wait = new WebDriverWait(driver, 5,500);
         WebElement onlineBtn = driver.findElement(By.xpath("//div[contains(@data-pid,'SBRF-TEXT-1021974')]"));
       wait.until(ExpectedConditions.elementToBeClickable(onlineBtn)).click();
+        ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+
+      //  driver.switchTo().frame(driver.findElement(By.xpath("//*[contains(text(),'Минимальная')]")));
+      //  driver.switchTo().frame(driver.findElement(By.xpath("//div[contains(@class,'b-form-box-block')]//div[(text()='Минимальная')]")));
       WebElement box = driver.findElement(By.xpath("//div[contains(@class,'b-form-box-block')]//div[(text()='Минимальная')]"));
        //wait.until(ExpectedConditions.elementToBeClickable(header)).click();
-     // wait.until(ExpectedConditions.visibilityOf(box));
-       //driver.findElement(By.xpath("//*[contains(text(),'Минимальная')]")).click();
+      wait.until(ExpectedConditions.visibilityOf(box)).click();
+     //  driver.findElement(By.xpath("//*[contains(text(),'Минимальная')]")).click();
+     driver.findElement(By.xpath("//*[contains(@ng-click,'save()')]")).click();
+
+
+
+
 
 
     }
-
+    public void fillField(By locator, String value){
+        driver.findElement(locator).clear();
+        driver.findElement(locator).sendKeys(value);}
     @After
     public void afterTest(){
-  //  driver.quit();
+ //  driver.quit();
 
     }
 }
