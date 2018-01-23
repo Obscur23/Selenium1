@@ -93,7 +93,7 @@ public class Test1 {
 
     @After
     public void afterTest() {
-        // driver.quit();
+        driver.quit();
 
     }
 }
