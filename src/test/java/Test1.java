@@ -37,7 +37,6 @@ public class Test1 {
         driver.get(baseUrl);
 
     }
-
     @Test
     public void testInsurance() {
         driver.findElement(By.xpath("//span[@class='multiline']//*[contains(text(),'Застраховать себя')]")).click();
