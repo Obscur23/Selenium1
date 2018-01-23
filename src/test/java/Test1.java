@@ -41,7 +41,7 @@ public class Test1 {
     public void testInsurance() {
         driver.findElement(By.xpath("//span[@class='multiline']//*[contains(text(),'Застраховать себя')]")).click();
         driver.findElement(By.xpath("//div[contains(@class,'sbrf-div-list-inner --area bp-area header_more_nav')]//a[contains(text(),'Страхование путешественников')]")).click();
-        Wait<WebDriver> wait = new WebDriverWait(driver, 5, 500);
+        Wait<WebDriver> wait = new WebDriverWait(driver, 10, 500);
         WebElement onlineBtn = driver.findElement(By.xpath("//div[contains(@data-pid,'SBRF-TEXT-1021974')]"));
 
        WebElement message = driver.findElement(By.xpath("//div[contains(@class,'sbrf-rich-outer')]/h1"));
@@ -75,9 +75,13 @@ public class Test1 {
         wait.until(ExpectedConditions.visibilityOf(messageIns));
         Assert.assertEquals("Заполнены не все обязательные поля", messageIns.getText());
 
-
         Assert.assertEquals("Ivanov", driver.findElement(By.name("insured0_surname")).getAttribute("value"));
-        //Assert.assertEquals("Ivanov", buffer = driver.findElement(By.name("insured0_surname")).getText());
+        Assert.assertEquals("Petr", driver.findElement(By.name("insured0_name")).getAttribute("value"));
+        Assert.assertEquals("27.02.1983", driver.findElement(By.name("insured0_birthDate")).getAttribute("value"));
+        Assert.assertEquals("Иванов", driver.findElement(By.name("surname")).getAttribute("value"));
+        Assert.assertEquals("Петр", driver.findElement(By.name("name")).getAttribute("value"));
+        Assert.assertEquals("Петрович", driver.findElement(By.name("middlename")).getAttribute("value"));
+
 
 
     }
@@ -89,7 +93,7 @@ public class Test1 {
 
     @After
     public void afterTest() {
-         driver.quit();
+        // driver.quit();
 
     }
 }
