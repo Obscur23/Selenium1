@@ -76,6 +76,10 @@ public class Test1 {
         Assert.assertEquals("Заполнены не все обязательные поля", messageIns.getText());
 
 
+        Assert.assertEquals("Ivanov", driver.findElement(By.name("insured0_surname")).getAttribute("value"));
+        //Assert.assertEquals("Ivanov", buffer = driver.findElement(By.name("insured0_surname")).getText());
+
+
     }
 
     public void fillField(By locator, String value) {
